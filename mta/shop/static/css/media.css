@@ -25,6 +25,11 @@
     ul hr {
         width: 200px;
     }
+
+    .navbar-bottom {
+        max-width: 200px;
+        width: 90%;
+    }
 }
 
 @media screen and (max-width: 480px){
@@ -68,5 +73,23 @@
     ul hr {
         display: block;
         width: 200px;        
+    }
+
+    ul .navbar-bottom {
+        grid-template-columns: 1fr;
+        max-width: 100px;
+        width: 90%;
+    }
+
+    ul .navbar-bottom li {
+        border: none;
+        margin: 0 auto;
+    }
+
+    ul .navbar-bottom li button a{
+        background-color: #f4f4f4;
+        color: rgba(153, 51, 0, 0.699);
+        border: none;
+        cursor: pointer;
     }
 }
