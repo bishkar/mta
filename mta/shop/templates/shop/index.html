@@ -21,19 +21,7 @@
         <!-- <li><button id="login_window" onclick="makeLoginWindow()">LOGIN</button></li>
         <li><button id="reg_window">REGISTER</button></li> -->
     </ul>
-    {% if not user.is_authenticated %}
-    <ul class="navbar-bottom">
-        <li><button><a href="{% url 'authorization:login_view' %}">Login</a></button></li>
-        <hr>
-        <li><button><a href="{% url 'authorization:register_view' %}">Register</a></button></li>
-        <hr>
-    </ul>
-    {% else %}
-    <ul class="navbar-bottom" style="grid-template-columns: 1fr;">
-        <li><button class="nav-btn"><a href="{% url 'authorization:logout_view' %}">Logout</a></button></li>
-        <hr>
-    </ul>
-    {% endif %}
+
 
     <div id="myModal" class="modal">
     
