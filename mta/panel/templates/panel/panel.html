@@ -1,12 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="../../static/panel/css/main.css" />
     <title>Document</title>
-</head>
-<body>
-    <button><a href="{% url 'authorization:logout_view' %}">LOG OUT</a></button>
-    <h1>HERE WILL BE ADMIN PANNEL FOR DOING SMTH!!!</h1>
-</body>
+  </head>
+  <body>
+    <header class="main">
+      <button>
+        <a href="{% url 'authorization:logout_view' %}">HOME</a>
+      </button>
+      <button>
+        <a href="{% url 'authorization:logout_view' %}">LOG OUT</a>
+      </button>
+    </header>
+    <header class="creation-panel">
+      <a href="#">Add a new one</a>
+    </header>
+    <header class="container">
+      <div class="product">
+        <img
+          class="product-img"
+          src="../../static/panel/images/test.jpg"
+          alt=""
+        />
+        <div class="product-info">
+          <div class="main-information">
+            <h1>Main Information</h1>
+            <div class="active-buttons">
+              <a href="#">
+                <i
+                  class="bi bi-pencil-square editable-icons active-buttons__edit"
+                ></i>
+              </a>
+              <a href="#">
+                <i
+                  class="bi bi-trash editable-icons active-buttons__delete"
+                ></i>
+              </a>
+            </div>
+          </div>
+          <h2>Author</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt
+            soluta iure eveniet aliquam omnis mollitia eius minima eaque quas
+            natus aliquid, veniam illo nemo iusto, repellat maxime incidunt
+            architecto ipsum!
+          </p>
+        </div>
+      </div>
+      <div class="product">
+        <img
+          class="product-img"
+          src="../../static/panel/images/test.jpg"
+          alt=""
+        />
+        <div class="product-info">
+          <div class="main-information">
+            <h1>Main Information</h1>
+            <div class="active-buttons">
+              <a href="#">
+                <i
+                  class="bi bi-pencil-square editable-icons active-buttons__edit"
+                ></i>
+              </a>
+              <a href="#">
+                <i
+                  class="bi bi-trash editable-icons active-buttons__delete"
+                ></i>
+              </a>
+            </div>
+          </div>
+          <h2>Author</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt
+            soluta iure eveniet aliquam omnis mollitia eius minima eaque quas
+            natus aliquid, veniam illo nemo iusto, repellat maxime incidunt
+            architecto ipsum!
+          </p>
+        </div>
+      </div>
+      <div class="product">
+        <img
+          class="product-img"
+          src="../../static/panel/images/test.jpg"
+          alt=""
+        />
+        <div class="product-info">
+          <div class="main-information">
+            <h1>Main Information</h1>
+            <div class="active-buttons">
+              <a href="#">
+                <i
+                  class="bi bi-pencil-square editable-icons active-buttons__edit"
+                ></i>
+              </a>
+              <a href="#">
+                <i
+                  class="bi bi-trash editable-icons active-buttons__delete"
+                ></i>
+              </a>
+            </div>
+          </div>
+          <h2>Author</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt
+            soluta iure eveniet aliquam omnis mollitia eius minima eaque quas
+            natus aliquid, veniam illo nemo iusto, repellat maxime incidunt
+            architecto ipsum!
+          </p>
+        </div>
+      </div>
+      <div class="product">
+        <img
+          class="product-img"
+          src="../../static/panel/images/test.jpg"
+          alt=""
+        />
+        <div class="product-info">
+          <div class="main-information">
+            <h1>Main Information</h1>
+            <div class="active-buttons">
+              <a href="#">
+                <i
+                  class="bi bi-pencil-square editable-icons active-buttons__edit"
+                ></i>
+              </a>
+              <a href="#">
+                <i
+                  class="bi bi-trash editable-icons active-buttons__delete"
+                ></i>
+              </a>
+            </div>
+          </div>
+          <h2>Author</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt
+            soluta iure eveniet aliquam omnis mollitia eius minima eaque quas
+            natus aliquid, veniam illo nemo iusto, repellat maxime incidunt
+            architecto ipsum!
+          </p>
+        </div>
+      </div>
+      <!-- <a href="{% url 'index' %}" class="previous round">&#8249;</a>
+      <h3>Register Here</h3>
+
+      <label for="username">Username</label>
+      <input type="text" name="username" placeholder="Username" />
+
+      <label for="password1">Password</label>
+      <input
+        type="password"
+        name="password1"
+        id="password1"
+        placeholder="Password"
+      />
+
+      <label for="password2">Confirm password</label>
+      <input
+        type="password"
+        name="password2"
+        id="password2"
+        placeholder="Confirm password"
+      />
+
+      <button type="submit">Register</button> -->
+    </header>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../../static/panel/js/editable-buttons.js"></script>
+    <!-- <div class="error_msg">
+      {% if error_message %} {{ error_message }} {% endif %}
+    </div> -->
+  </body>
 </html>
