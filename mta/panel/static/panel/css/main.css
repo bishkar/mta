@@ -103,7 +103,17 @@ body {
 .active-buttons__edit:hover {
   color: rgb(139, 138, 138);
 }
-
+#upload-photo {
+  padding: 10px;
+  height: 20%;
+}
+form {
+  width: 40% !important;
+}
+form button {
+  color: #000 !important;
+  padding: 10px;
+}
 label {
   display: block;
   margin-top: 30px;

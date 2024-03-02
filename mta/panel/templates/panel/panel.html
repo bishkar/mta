@@ -14,14 +14,14 @@
   <body>
     <header class="main">
       <button>
-        <a href="{% url 'authorization:logout_view' %}">HOME</a>
+        <a href="{% url 'authorization:logout_view' %}">HOME {{ new }}</a>
       </button>
       <button>
         <a href="{% url 'authorization:logout_view' %}">LOG OUT</a>
       </button>
     </header>
     <header class="creation-panel">
-      <a href="#">Add a new one</a>
+      <a href="{% url 'panel:create' %}">Add a new one</a>
     </header>
     <header class="container">
       <div class="product">

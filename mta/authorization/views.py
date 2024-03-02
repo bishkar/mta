@@ -33,6 +33,7 @@ def register_view(request):
             except IntegrityError:
                 error_message = "Login already exists. Choose a different login."
         else:
+            print(form.errors)
             error_message = "Invalid form. Please check the input values."
     
     return render(request, 'authorization/register.html', {'error_message': error_message})
