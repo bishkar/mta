@@ -23,18 +23,19 @@
       </button>
     </header>
 
-    <form action="" class="container">
+    <form action="{% url 'panel:create' %}" method="post" class="container" enctype="multipart/form-data">
+        {% csrf_token %}
       <a href="{% url 'panel:panel_view' %}" class="previous round">&#8249;</a>
       <h3>Adding new item</h3>
 
-      <label for="upload">Choose photo for item</label>
-      <input type="file" name="upload" id="upload-photo" />
+      <label for="image">Choose photo for item</label>
+      <input type="file" name="image" id="upload-photo" />
       <label for="title">Title</label>
       <input type="text" name="title" placeholder="Title of item" />
 
       <label for="manufacturer">Manufacturer</label>
       <input
-        type="password"
+        type="text"
         name="manufacturer"
         id="manufacturer"
         placeholder="Manufacturer of item"
@@ -42,7 +43,7 @@
 
       <label for="description">Description</label>
       <input
-        type="password"
+        type="text"
         name="description"
         id="description"
         placeholder="Description of item"
@@ -51,7 +52,6 @@
       <button type="submit">Save</button>
     </form>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="{% static 'panel/js/editable-buttons' %}"></script>
+
   </body>
 </html>
