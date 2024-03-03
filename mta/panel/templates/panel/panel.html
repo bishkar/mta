@@ -33,8 +33,8 @@
         <div class="product-info">
           <div class="main-information">
             <h1>{{ product.title }}</h1>
-            <div class="active-buttons">
-              <a href="#">
+            <div class="active-buttons hidden">
+              <a href="{% url 'panel:select' product.id %}">
                 <i
                   class="bi bi-pencil-square editable-icons active-buttons__edit"
                 ></i>

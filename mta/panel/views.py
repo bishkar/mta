@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 
@@ -44,3 +44,19 @@ def delete_product(request, pk):
 #             return redirect('panel:panel_view')
 #         return HttpResponse(f"{form.errors}")
 #     return render(request, 'panel/edit.html', context={"product": product})
+
+@login_required
+def select_to_edit(request, pk: int):
+    product = get_object_or_404(Product, pk=pk)
+    return render(request, 'panel/edit.html', context={"product": product})
+
+
+def update_product(request, pk: int):
+    product = get_object_or_404(Product, pk=pk)
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save(commit=True)
+            return redirect('panel:panel_view')
+        return HttpResponse(f"{form.errors}")
+    return render(request, 'panel/edit.html', context={"product": product})

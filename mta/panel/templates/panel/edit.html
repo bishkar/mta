@@ -22,22 +22,33 @@
         <a href="{% url 'authorization:logout_view' %}">LOG OUT</a>
       </button>
     </header>
-
-    <form action="{% url 'panel:create' %}" method="post" class="container" enctype="multipart/form-data">
+    update_product
+    {% if product %}
+        <form action="{% url 'panel:update_product' product.id %}" method="post" class="container" enctype="multipart/form-data">
         {% csrf_token %}
+        {% else %}
+           <form action="{% url 'panel:create_product' %}" method="post" class="container" enctype="multipart/form-data">
+        {% csrf_token %}
+    {% endif %}
+
       <a href="{% url 'panel:panel_view' %}" class="previous round">&#8249;</a>
       <h3>Adding new item</h3>
 
+
       <label for="image">Choose photo for item</label>
+        {% if product %}
+        <a href="{{product.image.url}}" target="_blank" class="photo-link">Current photo</a>
+        {% endif %}
       <input type="file" name="image" id="upload-photo" />
       <label for="title">Title</label>
-      <input type="text" name="title" placeholder="Title of item" />
+      <input type="text" value="{{ product.title }}" name="title" placeholder="Title of item" />
 
       <label for="manufacturer">Manufacturer</label>
       <input
         type="text"
         name="manufacturer"
         id="manufacturer"
+        value="{{ product.manufacturer }}"
         placeholder="Manufacturer of item"
       />
 
@@ -46,6 +57,7 @@
         type="text"
         name="description"
         id="description"
+        value="{{ product.description }}"
         placeholder="Description of item"
       />
 
