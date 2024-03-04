@@ -12,14 +12,13 @@
 </head>
 <body>
     <ul class="navbar">
-        <li><a href="{% url 'load_products_by_category' 'laptop' %}"><button>Laptops</button></a></li>
+ 
+        <li><button id="laptops_button">Laptops</button></li>
         <hr>
-        <li><a a href="{% url 'load_products_by_category' 'None' %}"><button>Load all</button></a></li>
+        <li><button id="all_button">Load all</button></a></li>
         <hr>
-        <li><a href="{% url 'load_products_by_category' 'mobile' %}" ><button>Mobile Phones</button></a></li>
+        <li><button id="mobile_button">Mobile Phones</button></a></li>
         <hr>
-        <!-- <li><button id="login_window" onclick="makeLoginWindow()">LOGIN</button></li>
-        <li><button id="reg_window">REGISTER</button></li> -->
     </ul>
 
 
@@ -43,12 +42,12 @@
             
         </div>
     </div>
-    <div class="product_container" id="container-id">{{ productsHtml | safe }} </div>
+    <div class="product_container" id="container-id"></div>
 
 
-
+    
     <script src="{% static 'js/advertisment.js'%}"></script>
-    <script src="{% static 'js/load_products.js'%}"></script>
+    <script src="{% static 'js/load_prod.js'%}"></script>
     <script src="{% static 'js/subscription.js'%}"></script>
     <!-- <script src="{% static 'js/reg_window.js'%}"></script> -->
 </body>
