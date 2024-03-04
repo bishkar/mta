@@ -5,9 +5,10 @@ from django.urls import reverse
 
 from .forms import ProductForm
 from .models import Product
+
+
 @login_required
 def panel_view(request):
-
     return render(request, 'panel/panel.html', context={"products": Product.get_all_products()})
 
 
