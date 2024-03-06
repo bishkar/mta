@@ -1,54 +1,56 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
-    <link rel="stylesheet" href="{% static 'css/media.css'%}">
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-</head>
-<body>
-    <ul class="navbar">
- 
-        <li><button id="laptops_button">Laptops</button></li>
-        <hr>
-        <li><button id="all_button">Load all</button></a></li>
-        <hr>
-        <li><button id="mobile_button">Mobile Phones</button></a></li>
-        <hr>
-    </ul>
-
-
-    <div id="myModal" class="modal">
-    
-      <div class="modal-content">
-        <span class="close_adv_btn" id="closeAdvBtn">&times;</span>
-        <p id="advertismentTimer"></p>
+  </head>
+  <div class="advertisement">
+      <p class="timer"></p>
+      <a class="modal-action-button">X</a>
+      <div class="main-content">
+          <h1>Тут могла б бути корисна реклама</h1>
+          <p>Всього дві хвилини на день...</p>
       </div>
-    
-    </div>
+  </div>
+  <body>
+    <header class="main-header">
+      <h1>📘 The Best Book Store.</h1>
 
-    <div id="nonModalWindow" class="non-modal-window">
-        <div class="window-content">
-                <h2>Non modal windowww</h2>
-                <p>Agree or not ?!</p>
-                <ul>
-                    <li id="agreeWindowbtn" class="agree-btn">Agree</li>
-                    <li id="declineWindowBtn" class="close-btn">Decline</li>
-                </ul>
-            
-        </div>
-    </div>
-    <div class="product_container" id="container-id"></div>
+      <nav>
+        <a href="#">Магазин</a>
+        <a href="#">Акції</a>
+        <a href="#">Программа лояльності</a>
+        <a href="#">Повернення</a>
+        <a href="#">Про нас</a>
+      </nav>
+    </header>
 
+    <header class="poster">
+      <div class="poster-text">
+        <h2>The world belongs to those who read.</h2>
+        <p>Rick Holland</p>
+      </div>
+      <img src="{% static 'media/default/book-poster.svg' %}" alt="" srcset="" />
+    </header>
 
-    
-    <script src="{% static 'js/advertisment.js'%}"></script>
-    <script src="{% static 'js/load_prod.js'%}"></script>
-    <script src="{% static 'js/subscription.js'%}"></script>
-    <!-- <script src="{% static 'js/reg_window.js'%}"></script> -->
-</body>
+    <header class="shop">
+      <div class="filters">
+        <a href="#" class="a-clicked">Всі</a>
+        <a href="#">Електронні</a>
+        <a href="#">Паперові</a>
+        <a href="#">Новинки</a>
+      </div>
+
+      <div class="products"></div>
+    </header>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="{% static 'js/push_advertisement.js' %}"></script>
+    <script src="{% static 'js/products_worker.js' %}"></script>
+{#    <script src="data/comics.js"></script>#}
+{#    <script src="assets/js/index.js"></script>#}
+  </body>
 </html>
