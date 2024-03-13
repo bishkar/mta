@@ -7,13 +7,32 @@
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
     <title>Document</title>
   </head>
-  <div class="advertisement">
+
+  <div class="advertisement modal accept"> 
+    <div class="main-content">
+        <h1>Тут могла б бути корисна реклама</h1>
+        <p>Всього дві хвилини на день...</p>
+    </div> 
+</div>
+
+<div class="book-modal modal"> 
+  <div class="main-content">
+      <h1>Тут могла б бути корисна реклама</h1>
+      <p>Всього дві хвилини на день...</p>
+  </div> 
+</div>
+
+  <div class="accept modal">
       <p class="timer"></p>
       <a class="modal-action-button">X</a>
       <div class="main-content">
-          <h1>Тут могла б бути корисна реклама</h1>
-          <p>Всього дві хвилини на день...</p>
+          <h1>Підпишіться на повідомлення від нас</h1> 
       </div>
+      
+    <div class="accept-button">
+      <button class="book_button acceptButton">Accept</button>
+      <button class="book_button acceptButton">Decline</button>
+    </div>
   </div>
   <body>
     <header class="main-header">
@@ -38,18 +57,22 @@
 
     <header class="shop">
       <div class="filters">
-        <a href="#" class="a-clicked">Всі</a>
-        <a href="#">Електронні</a>
-        <a href="#">Паперові</a>
-        <a href="#">Новинки</a>
+        <a id='all' class="a-clicked filter">Всі</a>
+        <a id="e-book" class="filter">Електронні</a>
+        <a id="paperback" class="filter">Паперові</a>
+        <a id="hardcover" class="filter">Тврерда палітурка</a>
       </div>
 
       <div class="products"></div>
     </header>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="{% static 'js/push_advertisement.js' %}"></script>
+    <!-- <script src="{% static 'js/push_advertisement.js' %}"></script> -->
     <script src="{% static 'js/products_worker.js' %}"></script>
+    <script src="{% static 'js/subscription.js' %}"></script>
+    <script src="{% static 'js/product_info.js' %}"></script>
+     >
+  
 {#    <script src="data/comics.js"></script>#}
 {#    <script src="assets/js/index.js"></script>#}
   </body>

@@ -1,38 +1,36 @@
 let displayWindow = true;
 let displayWindowStorage = localStorage.getItem("displayWindow");
-
-if (displayWindowStorage === "false") {
-    displayWindow = false;
+if(undefined != displayWindowStorage ) {
+    console.log(displayWindowStorage)
+    displayWindow = displayWindowStorage;
 }
-
-let nonModalWindow = document.getElementById("nonModalWindow");
-
-setInterval(() => {
-    if (displayWindow) {
-        nonModalWindow.style.display = "block";
-    }
-}, 1000);
-
+console.log(displayWindowStorage)
 
 document.addEventListener("DOMContentLoaded", function () {
-    let declineWindowBtn = document.getElementById("declineWindowBtn");
-    let agreeWindowBtn = document.getElementById("agreeWindowbtn");
+    let modalWindow = $(".accept");
+    let acceptButton = $(".acceptButton");
+    let declineButton = $('.declineButton') 
+
     
-    agreeWindowBtn.addEventListener("click", function () {
-        console.log("agree button clicked");
-        let nonModalWindow = document.getElementById("nonModalWindow");
-        nonModalWindow.style.display = "none";
-        clickedAccept();
+    if(displayWindow == true) {
+        console.log(displayWindow);
+        console.log("HAHAH")
+        setTimeout(function() {
+            modalWindow.css("display", "block") ;
+        }, 1);
+    }
+ 
+
+    $(acceptButton).on('click', function() {  
+        clickedAccept()
+        modalWindow.css("display", "none");
     });
 
-    declineWindowBtn.addEventListener("click", function () {
-        console.log("decline button clicked");
-        let nonModalWindow = document.getElementById("nonModalWindow");
-        nonModalWindow.style.display = "none";
+    $(declineButton).on('click', function() {  
+        modalWindow.css("display", "none");
     });
-    
-});
-
+ 
+  });
 
 function clickedAccept() {
     displayWindow = false;

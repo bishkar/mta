@@ -8,8 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         startTimer();
     }, 1);
 
-    $(closeButton).on('click', function() {
-        console.log("GHSDSDGDG")
+    $(closeButton).on('click', function() { 
         advWindow.css("display", "none");
     });
     function startTimer() {
@@ -25,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
     
             remainTime--;
-        }, 1000); 
+        }, 10000); 
     } 
   });
   

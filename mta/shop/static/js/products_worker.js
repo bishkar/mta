@@ -1,5 +1,6 @@
 
-let allTypes = ["H", 'E', "P"]
+let allTypes = ["H", "E", "P"]
+
 let selectedTypes = allTypes;
 let books = [];
 
@@ -14,24 +15,44 @@ function fetchData() {
         });
 }
 
+
+ 
+$(".filter").on('click', function(event) {  
+    $(".product").remove();
+    if(event.target.id === 'e-book'){
+        selectedTypes = ["E"];
+    }
+    if(event.target.id === 'hardcover'){
+        selectedTypes = ["H"];
+    }
+    if(event.target.id == 'paperback') {
+        selectedTypes = ["P"];
+    }
+    if(event.target.id === 'all_button'){
+        selectedTypes = allTypes;
+    }
+    loadProducts();
+});
+
 fetchData();
 function loadProducts(type) {
     console.log(books.length)
     for (let i = 0; i < books.length; i++) {
-        console.log("a")
-      let item = books[i];
-      $(".products").append(`<div class="product">
-        <img src="${item["image"]}" alt="" />
-        <div class="book-detail">
-        <div class="main-information"> 
-             <h4>${item["title"].slice(0, 13)}</h4>
-             <p class="author">${item["author"]}</p>
-             <p>${item["description"].slice(0, 50)}...</p>
-         </div>
-         <div class="info-section">
-         <button class="book_button">INFO</button>
-         </div>
-         </div>
-        </div>`);
+        let item = books[i]; 
+        if(selectedTypes.includes(item['category'])) {
+            $(".products").append(`<div class="product">
+            <img src="${item["image"]}" alt="" />
+            <div class="book-detail">
+            <div class="main-information"> 
+                 <h4>${item["title"].slice(0, 13)}</h4>
+                 <p class="author">${item["manufacturer"]}</p>
+                 <p>${item["description"].slice(0, 50)}...</p>
+             </div>
+             <div class="info-section">
+             <button class="book_button_info" id="book_${i}">INFO</button>
+             </div>
+             </div>
+            </div>`);
+        }
     }
 }

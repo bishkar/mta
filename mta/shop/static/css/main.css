@@ -98,7 +98,7 @@ a {
   display: flex;
   justify-content: center;
 } */
-.book_button {
+.book_button_info {
   width: 100%;
   height: 40px;
   font-weight: bold;
@@ -108,7 +108,7 @@ a {
   transition: all 0.5s;
 }
 
-.book_button:hover {
+.book_button_info:hover {
   color: #f6f6f6;
   background-color: #f59054;
   cursor: pointer;
@@ -129,10 +129,11 @@ a {
 .info-section {
   margin-top: 20px;
 }
-.advertisement {
+.modal {
   padding: 50px;
   color: #fff;
   border-radius: 20px;
+  display: none;
   background-color: #23a2f6;
   width: 500px;
   height: 400px;
@@ -142,11 +143,25 @@ a {
   transform: translate(-50%, -50%);
   z-index: 1;
 }
-.advertisement a {
+.modal a {
   right: 10%;
   top: 7%;
   position: fixed;
 }
 .modal-action-button {
   display: none;
+}
+
+.filters a:hover {
+  cursor: pointer;
+}
+
+.accept-button {
+  margin-top: 10px;
+  display: flex;
+  gap: 20px;
+}
+
+.accept-button button {
+  width: 50%;
 }
