@@ -11,7 +11,8 @@ function fetchData() {
             console.log(data); // Виводимо отримані дані
             books = data;
             console.log(books);
-            loadProducts()
+            loadProducts();
+
         });
 }
 
@@ -56,3 +57,14 @@ function loadProducts(type) {
         }
     }
 }
+
+
+function showData() {
+    document.addEventListener("DOMContentLoaded", function () {
+    $(".book_button_info").on('click', function(event) {
+        let bookInfo = $(`#${event.target_id}`);
+        $(bookInfo).css("display", "block");
+    });
+})
+}
+

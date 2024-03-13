@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
+    console.log("DOM fully loaded and parsed")
     let advWindow = $(".advertisement");
     let closeButton = $(".modal-action-button");
     let timer = $(".timer");
-
+    console.log(timer);
     setTimeout(function() {
         advWindow.css("display", "block")
         startTimer();
-    }, 1);
+    }, 10000);
 
     $(closeButton).on('click', function() { 
         advWindow.css("display", "none");
@@ -24,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
     
             remainTime--;
-        }, 10000); 
+        }, 1000);
     } 
   });
   
